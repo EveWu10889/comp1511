@@ -1,0 +1,19 @@
+ Node curr = head;
+    Node prev = NULL;
+    
+    if (curr == NULL) {
+        return 1;
+    }
+    
+    prev = curr;
+    curr = curr->next;
+    
+    while (curr != NULL) {
+        if (prev->data > curr->data || prev->data == curr->data) {
+            return 0;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    
+    return 1;
